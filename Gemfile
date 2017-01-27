@@ -8,7 +8,6 @@ gem 'delayed_job_active_record'
 gem 'devise'
 gem 'dotenv-rails'
 gem 'enum_help'
-gem 'foreman', require: false
 gem 'hashie'
 gem 'httparty'
 gem 'newrelic_rpm', '>= 3.9.8'
