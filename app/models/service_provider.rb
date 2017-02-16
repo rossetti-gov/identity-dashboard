@@ -1,6 +1,7 @@
 class ServiceProvider < ActiveRecord::Base
   belongs_to :user
   belongs_to :agency
+  has_many :team_members
 
   enum block_encryption: { 'aes256-cbc' => 1 }
 
@@ -33,4 +34,5 @@ class ServiceProvider < ActiveRecord::Base
   def recently_approved?
     previous_changes.key?(:approved) && previous_changes[:approved].last == true
   end
+
 end

@@ -53,3 +53,4 @@ table.horizontal-headers
   .action
     = button_to t('forms.buttons.delete_service_provider'), users_service_provider_url(service_provider),
       class: 'btn btn-wide p0 w-60p bg-light-blue blue regular border-box center', method: :delete
+= render 'team_members', { service_provider: service_provider }

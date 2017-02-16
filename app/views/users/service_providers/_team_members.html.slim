@@ -1,0 +1,21 @@
+h3 Team Members
+ul
+  li
+    strong Created by: 
+    = service_provider.user.email
+  - service_provider.team_members.each do |member|
+    li
+      = member.user.email
+      - if current_user.admin?
+        = simple_form_for([service_provider,member], method: :delete) do |f|
+          = f.submit "X"
+- if current_user.admin?
+  h4 Add a team member to this service provider
+  
+  = simple_form_for([service_provider,service_provider.team_members.build]) do |f|
+    = f.label :user
+    span
+      = collection_select(:service_provider, :user_id, User.all, :id, :email, prompt: true)
+    span
+      = f.submit "Add to team"
+
