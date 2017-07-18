@@ -10,6 +10,7 @@ development: &default
 test:
   <<: *default
   database: identity-dashboard_test
+  user: pguser
 
 production: &deploy
   encoding: utf8
